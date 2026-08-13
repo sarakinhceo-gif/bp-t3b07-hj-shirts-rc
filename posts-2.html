@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b07-hj-shirts-rc</title>
+  <meta name="description" content="t3b07-hj-shirts-rc에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://hapjeong-shirt-choice.program-school.online/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* Reset & Base */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ font-size: 100%;
+ scroll-behavior: smooth;
+ }
+ body {
+ background: #fafaf5;
+ color: #1a1a1a;
+ font-family: 'Georgia', 'Times New Roman', 'Palatino', serif;
+ line-height: 1.7;
+ letter-spacing: 0.02em;
+ -webkit-font-smoothing: antialiased;
+ padding: 0;
+ }
+
+ /* Typography */
+ h1, h2, h3, h4 {
+ font-weight: 400;
+ letter-spacing: 0.08em;
+ line-height: 1.2;
+ }
+ h1 {
+ font-size: 3.2rem;
+ margin-bottom: 0.5em;
+ }
+ h2 {
+ font-size: 2.4rem;
+ margin-bottom: 0.8em;
+ }
+ h3 {
+ font-size: 1.6rem;
+ margin-bottom: 0.6em;
+ }
+ p {
+ margin-bottom: 1.2em;
+ font-size: 1.1rem;
+ }
+ a {
+ color: #c5a880;
+ text-decoration: none;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.2s;
+ }
+ a:hover {
+ border-bottom-color: #c5a880;
+ }
+
+ /* Dropcap for hero intro */
+ .dropcap::first-letter {
+ font-size: 3.6rem;
+ float: left;
+ line-height: 1;
+ margin-right: 0.3em;
+ margin-top: 0.1em;
+ color: #c5a880;
+ font-weight: 700;
+ }
+
+ /* Layout Container */
+ .container {
+ max-width: 720px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+
+ /* Header & Navigation */
+ header {
+ padding: 24px 0;
+ border-bottom: 1px solid #e0d9cc;
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ max-width: 720px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ .logo {
+ font-size: 1.8rem;
+ letter-spacing: 0.15em;
+ color: #1a1a1a;
+ border: none;
+ }
+ .logo:hover {
+ border: none;
+ }
+ .logo span {
+ color: #c5a880;
+ }
+ nav ul {
+ display: flex;
+ list-style: none;
+ gap: 32px;
+ }
+ nav a {
+ font-size: 1rem;
+ letter-spacing: 0.08em;
+ color: #1a1a1a;
+ border: none;
+ }
+ nav a:hover {
+ color: #c5a880;
+ }
+
+ /* Hamburger Menu */
+ .menu-toggle {
+ display: none;
+ background: none;
+ border: none;
+ cursor: pointer;
+ padding: 8px;
+ }
+ .menu-toggle span {
+ display: block;
+ width: 24px;
+ height: 2px;
+ background: #1a1a1a;
+ margin: 5px 0;
+ transition: all 0.3s;
+ }
+
+ /* Hero */
+ .hero {
+ padding: 120px 0 72px;
+ position: relative;
+ overflow: hidden;
+ }
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(135deg, #1a1a1a 0%, #2d2a24 40%, #c5a880 100%);
+ opacity: 0.08;
+ z-index: 0;
+ }
+ .hero .container {
+ position: relative;
+ z-index: 1;
+ }
+ .hero h1 {
+ font-size: 3.6rem;
+ letter-spacing: 0.12em;
+ border-left: 3px solid #c5a880;
+ padding-left: 24px;
+ }
+ .hero .subhead {
+ font-size: 1.4rem;
+ color: #5a5a5a;
+ letter-spacing: 0.05em;
+ margin-bottom: 32px;
+ }
+ .hero p {
+ font-size: 1.2rem;
+ max-width: 640px;
+ }
+ .cta-link {
+ display: inline-block;
+ margin-top: 24px;
+ font-size: 1.2rem;
+ letter-spacing: 0.1em;
+ border: 1px solid #c5a880;
+ padding: 12px 32px;
+ color: #1a1a1a;
+ background: transparent;
+ transition: background 0.3s, color 0.3s;
+ }
+ .cta-link:hover {
+ background: #c5a880;
+ color: #fafaf5;
+ border-color: #c5a880;
+ }
+
+ /* Section spacing */
+ section {
+ padding: 72px 0;
+ border-top: 1px solid #e0d9cc;
+ }
+ section:first-of-type {
+ border-top: none;
+ }
+
+ /* About / Intro */
+ .about {
+ padding-top: 48px;
+ }
+ .about h2 {
+ font-size: 2rem;
+ }
+
+ /* UGC Cards */
+ .review-grid {
+ display: flex;
+ flex-direction: column;
+ gap: 48px;
+ }
+ .review-card {
+ border-left: 2px solid #c5a880;
+ padding-left: 24px;
+ }
+ .review-card .meta {
+ font-size: 0.9rem;
+ color: #7a7a7a;
+ margin-bottom: 8px;
+ display: flex;
+ gap: 12px;
+ align-items: center;
+ }
+ .review-card .stars {
+ color: #c5a880;
+ letter-spacing: 0.15em;
+ font-size: 1rem;
+ }
+ .review-card blockquote {
+ font-style: italic;
+ font-size: 1.1rem;
+ line-height: 1.6;
+ }
+ .review-card .author {
+ margin-top: 12px;
+ font-weight: 600;
+ font-style: normal;
+ color: #1a1a1a;
+ }
+
+ /* Features / Info */
+ .info-list {
+ list-style: none;
+ }
+ .info-list li {
+ padding: 16px 0;
+ border-bottom: 1px solid #e0d9cc;
+ display: flex;
+ justify-content: space-between;
+ font-size: 1.1rem;
+ }
+ .info-list li:last-child {
+ border-bottom: none;
+ }
+ .info-list .label {
+ color: #7a7a7a;
+ letter-spacing: 0.06em;
+ }
+ .info-list .value {
+ font-weight: 600;
+ }
+
+ /* Footer */
+ footer {
+ padding: 72px 0 48px;
+ border-top: 2px solid #1a1a1a;
+ text-align: center;
+ }
+ footer p {
+ font-size: 0.95rem;
+ color: #5a5a5a;
+ margin-bottom: 8px;
+ }
+ footer .phone-link {
+ font-size: 1.3rem;
+ letter-spacing: 0.1em;
+ color: #c5a880;
+ border-bottom: 1px solid #c5a880;
+ }
+ footer .phone-link:hover {
+ color: #1a1a1a;
+ }
+ .copyright {
+ margin-top: 32px;
+ font-size: 0.85rem;
+ color: #9a9a9a;
+ letter-spacing: 0.05em;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+ .menu-toggle {
+ display: block;
+ }
+ nav ul {
+ display: none;
+ flex-direction: column;
+ gap: 16px;
+ position: absolute;
+ top: 80px;
+ left: 0;
+ width: 100%;
+ background: #fafaf5;
+ padding: 24px;
+ border-bottom: 1px solid #e0d9cc;
+ z-index: 100;
+ }
+ nav ul.active {
+ display: flex;
+ }
+ .header-inner {
+ position: relative;
+ padding: 0 16px;
+ }
+ .container {
+ padding: 0 16px;
+ }
+ h1 {
+ font-size: 2.2rem;
+ }
+ h2 {
+ font-size: 1.8rem;
+ }
+ .hero {
+ padding: 72px 0 48px;
+ }
+ .hero h1 {
+ font-size: 2.4rem;
+ padding-left: 16px;
+ }
+ .hero .subhead {
+ font-size: 1.1rem;
+ }
+ section {
+ padding: 48px 0;
+ }
+ .review-card {
+ padding-left: 16px;
+ }
+ .info-list li {
+ flex-direction: column;
+ gap: 4px;
+ }
+ footer {
+ padding: 48px 0 32px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b07-hj-shirts-rc">
+  <meta property="og:description" content="t3b07-hj-shirts-rc에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://hapjeong-shirt-choice.program-school.online/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="header-inner">
+ <a href="/" class="logo">노아<span>골드</span></a>
+ <button class="menu-toggle" aria-label="메뉴 열기">
+ 
+ 
+ 
+ </button>
+ <nav>
+ <ul id="nav-menu">
+ <li><a href="#about">소개</a></li>
+ <li><a href="#reviews">후기</a></li>
+ <li><a href="#info">정보</a></li>
+ 
+ </ul>
+ </nav>
+ </div>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 38개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0122.html">합정 셔츠룸 추천 오해와 마곡 가라오케 추천정보</a>
+        <p class="post-item__summary">유흥업소를 방문하는 사람들은 흔히 예약 절차가 복잡하거나 정보가 완전히 차단되어 있다고 생각합니다. 하지만 이는 폐쇄적인 운영을 강조하는 일부 업체의 마케팅일 뿐, 실제로는 적절한 기준만 있다면 충</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0123.html">합정 셔츠룸 추천 기준과 마곡 유흥 추천정보 인원 구성</a>
+        <p class="post-item__summary">만족스러운 유흥을 즐기기 위해서는 기본적으로 몇 가지 필수 조건을 먼저 확인해야 합니다. 안전한 결제 시스템, 친절한 접객 태도, 그리고 시설의 청결도까지 꼼꼼히 따져봐야 합니다. 합정 셔츠룸 추천</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0124.html">합정 셔츠룸 추천 분석과 합정 노래방 추천정보</a>
+        <p class="post-item__summary">여러분은 평소 노래방을 선택할 때 가장 먼저 무엇을 확인하시나요? 단순히 집과 가까운 거리를 우선시하는지, 아니면 음향 시설과 내부 인테리어를 우선적으로 고려하는지 궁금합니다. 합정 셔츠룸 추천 관</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0125.html">합정 셔츠룸 추천 이용 전 참고할 연남 클럽 추천정보 선택 가이드</a>
+        <p class="post-item__summary">합정 셔츠룸 추천 관련 정보를 찾다가 연남동 일대의 밤 문화를 경험하고자 하는 분들이 많습니다. 성공적인 선택을 위해서는 우선 현재 운영 중인 업장의 위치와 주요 장르를 파악하는 것이 첫 번째 단계</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0126.html">합정 셔츠룸 추천 기준을 통한 합정 셔츠룸 추천정보 가격 판단 방식</a>
+        <p class="post-item__summary">합정 셔츠룸 추천 분야에서 자신에게 맞는 업소를 고를 때 가장 고민되는 지점은 비용입니다. 흔히 정찰제로 운영되는 곳과 유동적인 주대 정책을 가진 곳으로 나뉘는데, 각 선택지의 장단점을 비교해보아야</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0127.html">합정 셔츠룸 추천 찾는 이가 범하는 공덕 가라오케 추천정보 예약 실수</a>
+        <p class="post-item__summary">합정 셔츠룸 추천 검색에 익숙한 이들이 가끔 공덕 지역의 시설을 예약할 때 실패를 겪기도 합니다. 가장 흔한 실수는 예약 가능 시간을 제대로 확인하지 않고 방문하는 것입니다. 당일 예약이 가능한 곳</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0128.html">합정 셔츠룸 추천 보고 방문할 때 체크할 상수 마사지 추천정보 항목</a>
+        <p class="post-item__summary">합정 셔츠룸 추천 관련 정보를 보다가 인근의 휴식 공간인 상수 지역 마사지를 찾는 분들이 증가하고 있습니다. 이런 경우에는 단순히 서비스 내용만 볼 것이 아니라 위치와 접근성을 반드시 고려해야 합니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0129.html">합정 셔츠룸 추천 이용 전 꼭 알아야 할 망원 노래방 추천정보</a>
+        <p class="post-item__summary">오랜만에 만난 지인들과 저녁 식사 후 분위기를 이어가려 할 때, 합정 셔츠룸 추천 관련 정보를 찾다가도 실제로는 편안하게 노래를 부를 수 있는 공간을 고민하게 됩니다. 특히 망원 인근은 골목마다 다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0130.html">합정 셔츠룸 추천 찾는다면 알고 가야 할 홍대 노래방 추천정보</a>
+        <p class="post-item__summary">홍대라는 지역의 특성상 노래방을 이용할 때도 가격이 무조건 비싸거나 서비스가 획일적일 것이라는 오해를 하는 분들이 많습니다. 합정 셔츠룸 추천 키워드를 검색하는 이용자들 사이에서도 홍대 인근은 선택</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0131.html">합정 셔츠룸 추천 이용객을 위한 공덕 셔츠룸 추천정보 가이드</a>
+        <p class="post-item__summary">셔츠룸을 선택할 때 가장 먼저 고려해야 할 것은 서비스의 완성도와 공간의 쾌적함입니다. 합정 셔츠룸 추천 검색어는 많지만, 공덕 지역으로 눈을 돌리면 또 다른 형태의 맞춤형 서비스가 존재합니다. 우</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0132.html">합정 셔츠룸 추천 찾는 이들을 위한 연남 유흥 추천정보 기준</a>
+        <p class="post-item__summary">오늘 당신은 특별한 저녁을 계획하고 계신가요? 합정 셔츠룸 추천 문구를 보고 이곳저곳을 검색하던 중 연남동 인근의 독특한 유흥 문화를 접하게 되었을지도 모릅니다. 연남은 홍대나 합정과는 또 다른 감</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-001-5mayz6.html">셔츠룸 해결 방법 총정리</a>
+        <p class="post-item__summary">셔츠룸을 이용하기 전에는 위치, 운영 시간, 이용 규칙 등을 미리 파악하는 것이 필수적입니다. 공식 홈페이지나 신뢰할 수 있는 커뮤니티 게시물을 통해 기본 정보를 확인하면 현장에서 당황하는 일을 줄</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">합정 셔츠룸 선택 가이드</a>
+        <p class="post-item__summary">합정 지역의 셔츠룸을 선택할 때는 주로 해당 지역의 상권 특성을 고려해야 합니다. 많은 사용자가 옷감 품질과 관리 시스템이 잘 갖춰진 곳을 선호하는 경향이 있으며, 이는 장기적으로 옷을 보관하고 관</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">합정 셔츠룸 추천 정보</a>
+        <p class="post-item__summary">셔츠룸은 주로 옷감을 재단하거나 디자인을 구상하는 공간으로 활용됩니다. 합정 지역에서 셔츠룸을 찾으신다면 여러 가지 기능을 고려해야 합니다. 많은 분들이 셔츠룸에서 원단을 직접 고르고, 핏을 맞춰보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">합정 셔츠룸 선택의 맥락</a>
+        <p class="post-item__summary">합정 지역의 셔츠룸은 주머니 사정이 복잡하게 얽힌 공간이라는 점이 특징입니다. 단순한 의류 구매를 넘어, 일터에서 필요한 정장 셔츠의 품평과 착용감, 그리고 다양한 스타일의 셔츠들이 어떻게 배치되어</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">합정 셔츠룸에 관한 안내</a>
+        <p class="post-item__summary">합정 지역에서 셔츠룸을 찾으실 때는 다양한 선택지가 존재합니다. 일반적으로 쾌적한 환경과 충분한 사생활 보호가 가능한 시설을 갖추고 있는지 확인하는 것이 중요합니다. 실내 온도와 환기 시스템, 그리</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">합정 셔츠룸 선택 가이드</a>
+        <p class="post-item__summary">합정 지역에서 셔츠룸을 이용하고자 할 때, 가장 중요한 것은 명확한 가격 확인과 위생 상태 점검입니다. 많은 이용객들이 처음 방문할 때 어떤 서비스 내용이 포함되는지 파악하지 못하고 혼란을 겪곤 합</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-001-vc1ius.html">합정 셔츠룸 추천 처음 알아볼 때 실제로 많이 묻는 질문 5가지</a>
+        <p class="post-item__summary">합정 지역에서 셔츠룸을 처음 알아볼 때 가장 많이 접하게 되는 질문들은 대체로 영업 시간, 예약 방법, 요금 체계, 복장 규정, 위생 관리 등으로 모아집니다.</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
